@@ -2,10 +2,13 @@ import React from 'react'
 
 class TodoItems extends React.Component {
 
-  
-
     listTasks(item) {
-        return <li key={item.key}>{item.text}</li>
+        return (
+            <div>
+                <p className="ptask" key={item.key}>{item.text}</p>
+                <button className="del" type="submit">X</button>
+            </div>
+        )
     }
 
     render() {
@@ -13,9 +16,9 @@ class TodoItems extends React.Component {
         var listItems = todoEntries.map(this.listTasks);
 
         return (
-            <ul className="theList">
+            <div className="theList">
                 {listItems}
-            </ul>
+            </div>
         )    
     }
 }
