@@ -47,9 +47,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-       <div className='header'>
-        <form onSubmit={this.addItem}>
+      <div className="todoListMain">
+       <div className="header">
+          <form onSubmit={this.addItem}>
           <input ref={(a) => this._inputElement = a} placeholder="enter task" ></input>
           <button type="submit">Add</button>
         </form>
