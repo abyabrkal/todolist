@@ -1,12 +1,24 @@
 import React from 'react'
 
 class TodoItems extends React.Component {
+    constructor(props){
+        super(props)
 
+        this.delete = this.delete.bind(this);
+    }
   
 
-    listTasks(item) {
-        return <li key={item.key}>{item.text}</li>
+    delete(key) {
+        this.props.delete(key);
     }
+
+    
+    listTasks(item) {
+        return <li onClick={() => this.delete(item.key)} 
+                    key={item.key}>{item.text}</li>
+    }
+
+   
 
     render() {
         let todoEntries = this.props.entries;
